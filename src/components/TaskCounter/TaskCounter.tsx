@@ -2,6 +2,8 @@ import React, { ReactElement, FC } from 'react';
 import { Box, Typography, Avatar } from '@mui/material';
 import { ITaskCounter } from './Interfaces/ITaskCounter';
 import { Status } from '../TaskForm/enums/Status';
+import { emitCorrectBorderColor } from './helpers/emitCorrectBorderColor';
+import { emitColorLabel } from './helpers/emitColorLabel';
 
 const TaskCounter: FC<ITaskCounter> = (
   props,
@@ -22,11 +24,13 @@ const TaskCounter: FC<ITaskCounter> = (
             width: '96px',
             height: '96px',
             marginBottom: '16px',
-            borderColor: 'warning.light',
+            borderColor: `${emitCorrectBorderColor(
+              status,
+            )}`,
           }}
         >
           <Typography color="#ffffff" variant="h4">
-            10
+            {count}
           </Typography>
         </Avatar>
         <Typography
@@ -35,7 +39,7 @@ const TaskCounter: FC<ITaskCounter> = (
           fontSize="20px"
           variant="h5"
         >
-          Subtitle
+          {emitColorLabel(status)}
         </Typography>
       </Box>
     </>
