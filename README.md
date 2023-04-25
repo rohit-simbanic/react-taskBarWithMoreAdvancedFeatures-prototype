@@ -6,4 +6,5 @@ TaskFile.tsx
 -taskTitle.tsx
 -taskDescription.tsx
 ```
-- used Enum & interfaces well this project and switch case for styling condition
+- used Enum & interfaces well this project and switch case for styling condition 
+- used MUI as react component UI 
